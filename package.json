@@ -1,0 +1,26 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "nyc mocha --recursive",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha --recursive"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "supertest": "^3.0.0"
+  }
+}

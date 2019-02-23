@@ -1,0 +1,10 @@
+* Copy this file to Sean github
+* set up travis CI
+* Create docker image, make sure that this project runs on the docker image
+* Create an S3 Bucket,
+* Upload the DOCKER image to S3 bucket after travis PASSED
+
+
+b1
+master
+
