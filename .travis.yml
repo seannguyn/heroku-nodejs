@@ -6,11 +6,16 @@ cache:
     - "node_modules"
 jobs:
   include:
-    stage: Running Test
+    - stage: Running Test
       script:
         - echo $USER
         - npm run test
-    stage: Building Images
+    - stage: Building Images
+      script:
         - echo "build images here"
-    stage: Deploy
+    - stage: Deploy
+      script:
         - echo "deployment configuration here"
+
+        
+    
