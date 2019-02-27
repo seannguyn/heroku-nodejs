@@ -13,8 +13,7 @@ jobs:
     - stage: Building Images
       script:
         - echo "Building docker images"
-        - echo $DOCKER_PASSWORD
-        - docker login -u $DOCKER_USERNAME --password-stdin
+        - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
         - docker image build -t $DOCKER_USERNAME/heroku-nodejs
         - docker push $DOCKER_USERNAME/heroku-nodejs
 
