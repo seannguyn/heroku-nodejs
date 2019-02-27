@@ -8,14 +8,23 @@ jobs:
   include:
     - stage: Running Test
       script:
-        - echo $USER
+        - echo "Running test"
         - npm run test
     - stage: Building Images
       script:
-        - echo "build images here"
-    - stage: Deploy
-      script:
-        - echo "deployment configuration here"
+        - echo "Building docker images"
+        - echo $DOCKER_PASSWORD
+        - docker login -u $DOCKER_USERNAME --password-stdin
+        - docker image build -t $DOCKER_USERNAME/heroku-nodejs
+        - docker push $DOCKER_USERNAME/heroku-nodejs
+
+notifications:
+  slack:
+    rooms:
+      - secure: "gIpYCDuppujOCljDPcedTC/q3EvFSzRv96dNRvapWySf4RbXWiYCHagzor6fHb40h/zGRl6hxvHuZ6GHDO7u1c+BeznKOjHXg5srCDy6z5pT0qCKs6vQSO6QMvNlfwjgir0JYEwz4z5CVNSa5B2SqgVFUshEqTKGCnoQ1JblRN/auo18b7E+oo7VNBZGbKWYrZEbXlI7x0Pxakw9KzausXJyBblzDnmcCNc/B58GKUphbBBzWnil4vjUF3AQY7SDamVC6RLiN8kIFM6zRBdXAFooWWUX3hN1ay1LQHJ+OzU2+JCL6LdAXfNGXCyEs79uu6GgGZ14p8neKnixEWKGdxfFtV/R2GqJeY3RCiJ4Vc9lWHj/f5rtqwEDsU3ec4Ms4Bx1kJYLaXleT3bPdyl49pBfvglt6TXsPrcKP0aIf5b+lEXb/OiM/WCAKT/TpcJA0uR+ZCnnyUlVv2mbHdxcoYxl3rfnBrNGJE6B4jhpFi9wYuf9z2I1pUN8fcjC+zkVsyg54o+ozngburIUAHXHQrL5xzf1Afy7E/+HoFEzsb/ZeacwfxVO8E3Pr9QP4PCY0UvTr0vmX1sq6rGQcifzekLCfJ5mg4PmQNBzWGBKTmfA69lE4D/r8EyZ9cHua+jx0Vq/TpcY71NDk1UYZj/bo7x6Qe3gitJEcpGiOYRMdYQ="
+    on_success: always
+
+
 
         
     
