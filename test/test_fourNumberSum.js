@@ -13,15 +13,19 @@ describe('Testing fourNumberSum', function() {
     it('Test Case #1', function() {
 
         let output = algorithm.fourNumberSum([1,2,3,4,5,6,7],10);
-        chai.expect(output.length === 1).to.be.true;
-
+                
         output = output.map(sortAndStringify);
-        const quadruplets = [
+
+        let quadruplets = [
             [1,2,3,4]
         ]
-        
-        for (const quad in quadruplets) {
-            chai.expect(output).to.include(sortAndStringify(quad));
+
+        quadruplets = quadruplets.map(sortAndStringify);
+
+        chai.expect(output.length === 1).to.be.true;
+        for (var i = 0; i < quadruplets.length; i++) {
+            chai.expect(output).to.include(quadruplets[i]);
         }
-    })
+    });
+
 })
