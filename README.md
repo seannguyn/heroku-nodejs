@@ -1,11 +1,8 @@
-### Node Express template project
+### Deployed link
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/gitlab-basics/create-project.html).
+https://heroku-nodejs-template.herokuapp.com/
 
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/express).
+### Pipeline
 
-### CI/CD with Auto DevOps
+Nodejs -> github -> Travis CI -> Heroku deployment and Slack notifications
 
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
-
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enabling-auto-devops) in the project settings.
