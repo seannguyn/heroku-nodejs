@@ -27,5 +27,22 @@ describe('Testing fourNumberSum', function() {
             chai.expect(output).to.include(quadruplets[i]);
         }
     });
- 
+    it('Test Case #2', function() {
+
+        let output = algorithm.fourNumberSum([7,6,4,-1,1,2],16);
+                
+        output = output.map(sortAndStringify);
+
+        let quadruplets = [
+            [7,6,4,-1],
+            [7,6,1,2]
+        ]
+        
+        quadruplets = quadruplets.map(sortAndStringify);
+
+        chai.expect(output.length === 2).to.be.true;
+        for (var i = 0; i < quadruplets.length; i++) {
+            chai.expect(output).to.include(quadruplets[i]);
+        }
+    })
 })
