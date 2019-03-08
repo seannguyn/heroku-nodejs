@@ -39,7 +39,7 @@ describe('Testing fourNumberSum', function() {
         ]
         
         quadruplets = quadruplets.map(sortAndStringify);
-
+    
         chai.expect(output.length === 2).to.be.true;
         for (var i = 0; i < quadruplets.length; i++) {
             chai.expect(output).to.include(quadruplets[i]);
