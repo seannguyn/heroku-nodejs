@@ -27,5 +27,5 @@ describe('Testing fourNumberSum', function() {
             chai.expect(output).to.include(quadruplets[i]);
         }
     });
-
+ 
 })
